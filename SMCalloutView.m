@@ -514,6 +514,7 @@ NSTimeInterval const kSMCalloutViewRepositionDelayForUIScrollView = 1.0/3.0;
 
 - (void)layoutSubviews {
     
+    CGSize contentViewSize = self.contentView.frame.size;
     self.containerView.frame = self.bounds;
     self.backgroundView.frame = self.bounds;
     
@@ -537,6 +538,7 @@ NSTimeInterval const kSMCalloutViewRepositionDelayForUIScrollView = 1.0/3.0;
     if (self.contentView) {
         self.contentView.frameX = self.innerContentMarginLeft;
         self.contentView.frameY = self.contentViewInset.top + dy;
+        self.contentView.frameSize = contentViewSize; 
     }
 }
 
